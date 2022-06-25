@@ -1,4 +1,6 @@
 import json
 from GameQuake import GameQuake
 
-jogo1 = GameQuake('nomedoarquivo', 10)
+
+
+jogo1 = GameQuake(filename, 21)
