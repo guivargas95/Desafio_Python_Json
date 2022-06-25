@@ -1,9 +1,9 @@
 class GameQuake:
     def __init__(self, gameFile, gameNumber):
+        self.__dictFinal = {}
         self.__gameFile = gameFile
         self.__gameNumber = gameNumber
         self.openFile(self.__gameFile, self.__gameNumber)
-        self.__killList = []
 
 
     def openFile(self, file, gameNumber):
@@ -64,8 +64,11 @@ class GameQuake:
                     for player in playersList:
                         if player['id'] == int(line.split()[2]):
                             player['kills'] += 1
-        gameDict = {"game": self.__gameNumber, "status": {"total_kills": gameTotalKills, "players": playersList}}
-        print(gameDict)
+        self.__dictFinal = {"game": self.__gameNumber, "status": {"total_kills": gameTotalKills, "players": playersList}}.copy()
+
+    @property
+    def dictFinal(self):
+        return self.__dictFinal
 
 
 
