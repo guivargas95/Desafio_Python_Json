@@ -67,7 +67,7 @@ class GameQuake:
         self.__dictFinal = {"game": self.__gameNumber, "status": {"total_kills": gameTotalKills, "players": playersList}}.copy()
 
     def gameAmount(self):
-        '''Verifica a quantidade de partidas do game'''
+        '''Verifica a quantidade de partidas dentro do arquivo txt do game'''
         quant = 0
         with open(self.__gameFile) as fh:
             for line in fh:
@@ -77,6 +77,7 @@ class GameQuake:
 
     @property
     def dictFinal(self):
+        '''Devolve o dict final'''
         return self.__dictFinal
 
 
